@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.error {
+    color: red;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+#root {
+    width: 100%;
+}
+
+.Home {
+    min-height: 90vh;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.v-center {
+    align-items: center;
+}
+
+#icon {
+    width: 40px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#landingImg {
+    min-width: 350px;
+    width: 30%;
+    z-index: -1;
+}
+
+nav {
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.336);
+}
+
+.nav {
+    width: 75%;
+    max-width: 500px;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+
+#content h2 {
+    font-weight: bolder;
+    font-size: 250%;
+}
+
+.m5 {
+    margin: 10px;
+}
+
+.right {
+    display: block;
+}
+
+.left {
+    max-width: 500px;
+    text-align: center;
+    margin: 5% 0;
+}
+
+
+.footer {
+    box-shadow: 0px 5px 20px 0px black;
+    margin-top: 2vh;
+    height: 8vh;
+    justify-content: center;
+}
+
+#icons {
+    display: flex;
+    width: 75%;
+    max-width: 500px;
+    justify-content: space-between;
+}
+
+#icons i {
+    color: black;
+}
+
+#icons a:hover {
+    transform: scale(2);
+
+}
+
+/* nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+}
+
+footer {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#content {
+    z-index: -1;
+    margin-top: 80px;
+} */
+
+#profile {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    font-size: xx-small;
+    z-index: 2;
+    padding: 5px;
+    transform: translateX(-30%);
+
+}
+
+#profile-pop {
+    scale: 2;
+}
+
+#logout {
+    padding: 2px 0;
+}
+
+/* #profile-pop:hover {
+
+    #profile {
+        display: block;
+    }
+} */

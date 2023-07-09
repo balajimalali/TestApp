@@ -1,0 +1,115 @@
+#heading {
+    width: 100%;
+    text-align: center;
+}
+
+#tests {
+    width: 100%;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.float-right {
+    float: right;
+
+}
+
+.test {
+    width: 87%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.336);
+}
+
+.instructions {
+    width: 95%;
+    margin: auto;
+}
+
+.top h3 {
+    display: inline;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top a {
+    background-color: var(--answered);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    /* margin-right: 1%; */
+}
+
+
+.col-2-stack {
+    width: 40%;
+    min-width: 200px;
+    display: inline-block;
+}
+
+.result h3 {
+    display: table;
+    margin: auto;
+}
+
+.result {
+    width: 90%;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+.section {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.question {
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.336);
+}
+
+.answer {
+    padding: 5px;
+    margin: 8px;
+    border-radius: 5px;
+    background-color: rgb(246, 248, 250);
+    /* border: 0.5px solid grey; */
+}
+
+.wrong {
+    color: white;
+    background-color: var(--notAnswered);
+}
+
+.correct {
+    color: white;
+    background-color: var(--answered);
+
+}
+
+.back {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid blue;
+}
+
+.back:hover {
+    background-color: blue;
+    color: white;
+    border: none;
+}

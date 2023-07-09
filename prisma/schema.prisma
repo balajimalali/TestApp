@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String     @id @default(uuid())
+  username   String     @unique
+  first_name String?
+  last_name  String?
+  email      String     @unique
+  password   String
+  role       String     @default("PUBLIC")
+  test       Qpaper[]
+  Instance   Instance[]
+}
+
+model Qpaper {
+  id            Int       @id @default(autoincrement())
+  title         String
+  User          User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userId        String?
+  section       Section[]
+  time          Int       @default(60) // in minutes
+  instructions  String? // @db.LongText
+  positiveMarks Int       @default(4)
+  negativeMarks Int       @default(-1)
+}
+
+model Section {
+  id       Int        @id @default(autoincrement())
+  title    String
+  question Question[]
+  qpaper   Qpaper     @relation(fields: [qpaperId], references: [id], onDelete: Cascade)
+  qpaperId Int
+}
+
+model Question {
+  id       Int       @id @default(autoincrement())
+  question String    @unique
+  option   Option[]
+  section  Section[]
+  answer   Int
+}
+
+model Option {
+  id          Int      @id @default(autoincrement())
+  value       String
+  Questions   Question @relation(fields: [questionsId], references: [id])
+  questionsId Int
+}
+
+model Instance {
+  id       String  @id @default(uuid())
+  user     User    @relation(fields: [userId], references: [id])
+  userId   String
+  start    String
+  submited Boolean @default(false)
+  end      String?
+  value    String?
+  result   String?
+}

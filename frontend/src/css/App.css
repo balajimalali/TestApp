@@ -1,0 +1,431 @@
+:root {
+    --answered: #04AA6D;
+    --notAnswered: #dc3545;
+    --notVisited: #6c757d;
+    --marked: #4802b5;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand';
+}
+
+button {
+    border: none;
+    padding: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    height: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* background-color: grey; */
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 4px;
+}
+
+/* .horizontal-align{
+    display: flex;
+} */
+
+/* TestHeader */
+
+#testHeader {
+    height: 10vh;
+    /* background-color: azure; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 1px grey;
+}
+
+#title {
+    margin: 0 40px;
+    font-size: x-large;
+}
+
+.flex {
+    display: flex;
+}
+
+#timer {
+    padding: 0 30px;
+}
+
+#userInfo {
+    padding: 0 30px;
+    border-left: 1px solid grey;
+    font-weight: bold;
+}
+
+/* NavBar */
+
+#NavBar {
+    height: 8vh;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 4px rgba(128, 128, 128, 0.336);
+}
+
+#sections {
+    width: 50%;
+}
+
+#sections button {
+    margin-right: 10px;
+}
+
+/* MainArea */
+
+#mainArea {
+    height: 71vh;
+    /* background-color: aquamarine; */
+    overflow-y: scroll;
+    float: left;
+    width: 75%;
+    /* width: 100%; */
+    /* padding-bottom: 10vh; */
+    align-items: center;
+    margin-top: 1vh;
+}
+
+#QueTitle {
+    display: flex;
+    margin: 0 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid black;
+}
+
+#queNo {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+#type {
+    font-size: medium;
+    background-color: azure;
+    padding: 5px;
+    border-radius: 4px;
+
+}
+
+#Question {
+    padding: 20px 40px;
+    font-size: 20px;
+}
+
+.options {
+    margin: 10px 50px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 2px 2px 6px rgba(128, 128, 128, 0.479);
+    display: flex;
+    cursor: pointer;
+}
+
+.options p {
+    display: inline-block;
+    margin: 10px;
+    width: 95%;
+}
+
+.selected {
+    background-color: var(--answered) !important;
+}
+
+.marker {
+    background-color: #04aaaa30;
+    display: inline-block;
+    width: 5%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Panel */
+
+#panel {
+    /* background-color: burlywood; */
+    float: right;
+    font-size: 17px;
+    right: 0;
+    height: 82vh;
+    width: 25%;
+    overflow: auto;
+}
+
+
+#panelContent {
+    margin: 4% 0 4% 6%;
+}
+
+/* statusInfo */
+.notVisited {
+    background-color: var(--notVisited);
+}
+
+.answered {
+    background-color: var(--answered);
+}
+
+/* .square p{
+    width: 500px;
+    text-align: center;
+} */
+
+.tick {
+    font-size: 10px;
+    margin: 0 !important;
+}
+
+.notAnswered {
+    background-color: var(--notAnswered);
+}
+
+.ansMarked,
+.marked {
+    background-color: var(--marked);
+}
+
+/* .marked{
+    color: #dcd935 !important;
+} */
+.colInfo {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.colInfo div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.colInfo>p {
+    display: flex;
+}
+
+.square {
+    height: 30px;
+    width: 30px;
+    border-radius: 20%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* grid */
+#grid {
+    margin: 20px 0 5px -1%;
+}
+
+#grid p {
+    margin: 1%;
+}
+
+#grid div {
+    display: inline-flex;
+}
+
+#grid>div>div {
+    margin: 2px;
+    cursor: pointer;
+}
+
+/* Controls */
+
+#controls {
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+    /* background-color: azure; */
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 4px -4px 8px 6px rgba(128, 128, 128, 0.151);
+}
+
+#controls button {
+    /* margin: 20px; */
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.blueOutBut {
+    border: 1px solid blue !important;
+    background-color: white;
+    margin: 0 1px;
+}
+
+.blueBut {
+    background-color: blue;
+    color: white;
+    margin: 1px;
+}
+
+.greenBut {
+    background-color: var(--answered);
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    #panel {
+        width: 0;
+    }
+
+    #mainArea {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .timer {
+        flex-direction: column-reverse;
+    }
+
+    #timer {
+        padding: 2% 10px;
+    }
+
+    #sections {
+        width: 75%;
+    }
+
+    #NavBar {
+        padding: 0 10px;
+    }
+
+    #controls {
+        height: 12vh;
+    }
+
+    #controls div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #controls button {
+        height: 5vh;
+        margin: 2px 4px;
+    }
+
+    #title {
+        margin: 0 10px;
+    }
+
+    #userInfo {
+        padding: 0 10px;
+    }
+
+    #QueTitle {
+        margin: 0 10px;
+    }
+
+    #Question {
+        padding: 20px 10px;
+    }
+
+    .options {
+        margin: 10px;
+    }
+
+    .options p {
+        width: 90%;
+    }
+
+    .marker {
+        width: 10%;
+    }
+
+    #controls {
+        position: fixed;
+    }
+
+    #mainArea {
+        height: 68vh;
+    }
+}
+
+
+
+
+/*  404 */
+
+#notfound {
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#img404 {
+    width: 100%;
+    z-index: 0;
+}
+
+.inner-text {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+#home-btn {
+    text-decoration: none;
+    background-color: #4802b5;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+
+#home-btn:hover {
+    background-color: white;
+    color: #4802b5;
+}
+
+
+/* loader: downloading */
+
+#downloading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 80%;
+    max-width: 300px;
+}
+
+#downloading img {
+    width: 100%;
+}
+
+#downloading p {
+    font-size: large;
+    text-transform: capitalize;
+    text-align: center;
+}
