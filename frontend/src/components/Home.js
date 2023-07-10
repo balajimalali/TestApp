@@ -12,13 +12,18 @@ import { userContext } from '../App'
 
 export default function Home() {
     // const navigate = useNavigate();
-    const User = useContext(userContext)[0];
+    const [User, setUser] = useContext(userContext);
     const [popup, setpopup] = useState({
         open: false,
         elem: null
     })
 
     const [dis, setDis] = useState('none')
+
+    const signout = ()=>{
+        document.cookie = 'jwt=';
+        setUser({})
+    }
 
     return (
         <>
@@ -40,7 +45,7 @@ export default function Home() {
                         </div>
                         <ul className='flex nav'>
                             {/* <li className='cursor'>Dashboard</li> */}
-                            {User && User.first_name ?
+                            {User && User.username ?
                                 //  <div>Welcome, {User.first_name.toUpperCase()} {User.last_name.toUpperCase()}</div> 
                                 <>
                                     <div id='profile-pop'>
@@ -49,7 +54,7 @@ export default function Home() {
                                         </div>
                                         <div id="profile" style={{ display: dis }}>
                                             <p>{User.username}</p>
-                                            {/* <div className='cursor' id='logout'>Logout</div> */}
+                                            <div className='cursor' id='logout' onClick={signout}>Logout</div>
                                         </div>
                                     </div>
                                     <Link to="/alltests">Tests</Link>

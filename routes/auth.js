@@ -22,12 +22,12 @@ const validateNewUser = async (req, res, next) => {
         })
     }
     else {
-        res.json({ msg: 'pleade provide username' })
+        res.status(400).json({ msg: 'pleade provide username' })
         return;
     }
 
     if (t1) {
-        res.json({ msg: 'username already exists' })
+        res.status(400).json({ msg: 'username already exists' })
         return;
     }
     req.data.username = req.body.username
@@ -39,11 +39,11 @@ const validateNewUser = async (req, res, next) => {
         })
     }
     else {
-        res.json({ msg: 'please provide email' })
+        res.status(400).json({ msg: 'please provide email' })
         return;
     }
     if (t1) {
-        res.json({ msg: 'email already exists' })
+        res.status(400).json({ msg: 'email already exists' })
         return;
     }
     req.data.email = req.body.email
@@ -51,7 +51,7 @@ const validateNewUser = async (req, res, next) => {
         req.data.password = await hash(req.body.password);
     }
     else {
-        res.json({ msg: 'passwords do not match' })
+        res.status(400).json({ msg: 'passwords do not match' })
         return;
     }
     if (req.body.first_name) {

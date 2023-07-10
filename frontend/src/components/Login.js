@@ -42,7 +42,7 @@ export default function Login(props) {
                 <p className='error'>{Form.msg}</p>
                 <input type="text" autoFocus value={Form.username} onChange={(e) => { setForm({ ...Form, username: e.target.value }) }} /> <br />
                 <input type="password" value={Form.password} onChange={(e) => { setForm({ ...Form, password: e.target.value }) }} /> <br />
-                <p onClick={() => { props.setpopup({ open: true, elem: <Register /> }) }} className='cursor' id='registernav' >Don't have an account</p> <br />
+                <p onClick={() => { props.setpopup({ open: true, elem: <Register setpopup={props.setpopup} /> }) }} className='cursor' id='registernav' >Don't have an account</p> <br />
                 <button>Login</button>
             </form>
         </div>

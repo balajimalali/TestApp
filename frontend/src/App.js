@@ -36,27 +36,28 @@ function App() {
 
   useEffect(() => {
     const time = setInterval(() => {
-      fetch(`${process.env.REACT_APP_LINK}/api/refresh`, {
-        method: 'POST',
-        headers: {
-          Authorization: "Bearer " + token('jwt'),
-          "Content-Type": "application/json"
-        },
-        credentials: 'include'
-      }).then(res => {
-        console.log('jwt refreshed');
-        if (res.status !== 200) {
-          navigate('/')
-        }
-      }).catch(err => {
-        console.log(err);
-      })
+      if(User.username){
+        fetch(`${process.env.REACT_APP_LINK}/api/refresh`, {
+          method: 'POST',
+          headers: {
+            Authorization: "Bearer " + token('jwt'),
+            "Content-Type": "application/json"
+          },
+          credentials: 'include'
+        }).then(res => {
+          if (res.status !== 200) {
+            navigate('/')
+          }
+        }).catch(err => {
+          console.log(err);
+        })
+      }
     }, 8 * 60 * 1000);
 
     return () => {
       clearInterval(time);
     }
-  }, [navigate])
+  }, [navigate, User.username])
 
   return (
     <div className="App">
