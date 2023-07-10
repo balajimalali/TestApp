@@ -40,8 +40,8 @@ export default function Login(props) {
             <form onSubmit={(e) => handleClick(e)} >
 
                 <p className='error'>{Form.msg}</p>
-                <input type="text" autoFocus value={Form.username} onChange={(e) => { setForm({ ...Form, username: e.target.value }) }} /> <br />
-                <input type="password" value={Form.password} onChange={(e) => { setForm({ ...Form, password: e.target.value }) }} /> <br />
+                <input type="text" placeholder='username' required autoFocus value={Form.username} onChange={(e) => { setForm({ ...Form, username: e.target.value }) }} /> <br />
+                <input type="password" placeholder='password' required value={Form.password} onChange={(e) => { setForm({ ...Form, password: e.target.value }) }} /> <br />
                 <p onClick={() => { props.setpopup({ open: true, elem: <Register setpopup={props.setpopup} /> }) }} className='cursor' id='registernav' >Don't have an account</p> <br />
                 <button>Login</button>
             </form>
