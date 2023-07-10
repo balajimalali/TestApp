@@ -82,6 +82,9 @@ nav {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 25px 0;
+
+    position: relative;
+    z-index: -1;
 }
 
 #content h2 {
@@ -166,6 +169,10 @@ footer {
 
 #logout {
     padding: 2px 0;
+}
+
+#logout:hover{
+    color: chartreuse;
 }
 
 /* #profile-pop:hover {

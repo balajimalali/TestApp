@@ -7,11 +7,11 @@ import Login from './Login'
 import { useState, useContext } from 'react'
 import Register from './Register'
 import { userContext } from '../App'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Home() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [User, setUser] = useContext(userContext);
     const [popup, setpopup] = useState({
         open: false,
@@ -23,6 +23,7 @@ export default function Home() {
     const signout = ()=>{
         document.cookie = 'jwt=';
         setUser({})
+        navigate('/')
     }
 
     return (
