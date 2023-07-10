@@ -83,8 +83,12 @@ nav {
     justify-content: space-evenly;
     margin: 25px 0;
 
+}
+
+#heading{
     position: relative;
     z-index: -1;
+
 }
 
 #content h2 {
