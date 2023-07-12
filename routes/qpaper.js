@@ -58,7 +58,7 @@ router.get('/:id', database.authenticate('user'), async (req, res) => {
         })
         const token = database.jwtToken(instance.id, qpaper.time + 2)
         res.cookie('tst', 'Bearer ' + token, { expires: new Date(Date.now() + (qpaper.time + 2) * 60 * 1000) })
-        res.json({ qpaper: qpaper, user: user, start: instance.start })
+        res.json({ qpaper: qpaper, user: user, start: instance.start, iid: instance.id })
     }
     else {
         res.status(404).json({ msg: "not found" })

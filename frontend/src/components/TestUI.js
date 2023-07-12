@@ -188,7 +188,7 @@ export default function TestUI(props) {
         body: JSON.stringify({ "test": Test, "submit": true, "end": Date().toString })
       }).then(res => {
         if (res.status === 200) {
-          navigate('/');
+          navigate(`/results/${Test.iid}`);
         }
         return res.json()
       }).then(data => {
@@ -269,6 +269,7 @@ export default function TestUI(props) {
       setUser(dataobj.user)
       setTime({ min: parseInt(data.time), sec: 0, time: parseInt(data.time), start: dataobj.start })
       data.section[0].isactive = true
+      data.iid = dataobj.iid
       data.section[0].question[0].isactive = true
       data.activeSection = 1
       data.activeQuestion = 1

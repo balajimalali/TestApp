@@ -83,6 +83,9 @@
     box-shadow: 0 2px 8px rgba(128, 128, 128, 0.336);
 }
 
+
+ /* report */
+
 .answer {
     padding: 5px;
     margin: 8px;
@@ -100,6 +103,10 @@
     color: white;
     background-color: var(--answered);
 
+}
+
+.choice {
+    border: 2px solid green;
 }
 
 .back {

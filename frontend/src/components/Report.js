@@ -22,6 +22,7 @@ export default function Report() {
             else {
                 const data = await res.json();
                 setResult(data);
+                console.log(data);
             }
         }).catch(err => {
             console.log(err);
@@ -29,12 +30,20 @@ export default function Report() {
     }, [navigate, id])
 
     const classD = (question, option) => {
+        let ans = 'answer'
+        if(option.selected){
+            // ans = ans + ' choice'
+            if (question.answer !== option.id) {
+                ans = ans + ' wrong'
+            }
+        }
+
         if (question.answer === option.id) {
-            return 'answer correct'
+            ans = ans + ' correct'
         }
 
 
-        return 'answer'
+        return ans
     }
 
     return (
@@ -54,7 +63,7 @@ export default function Report() {
                                             {
                                                 question.option.map(option => {
                                                     return <div key={option.id}>
-                                                        <p className={classD(question, option)}>{option.value}</p>
+                                                        <p className={classD(question, option)}>{option.selected ?  <span>&#10003; &nbsp;</span> : <span>&nbsp; &nbsp; &nbsp;</span> }{option.value}</p>
                                                     </div>
                                                 })
                                             }
