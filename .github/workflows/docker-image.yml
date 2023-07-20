@@ -5,6 +5,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+    
+env:
+  DATABASE_URL: "file:./dev.db"
 
 jobs:
 
