@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  backend:
+    stdin_open: true
+    container_name: backend
+    environment:
+      - DATABASE_URL="file:./dev.db"
+      - TOKEN_SECRET="09f26e402586e2faa8da4c98a35f1b20d6b033c60"
+      - TEST_SECRET="09f26e402586e2faa8da4c98a35f1b20d6b033c60"
+      - PASSWORD_SALT="$2b$10$RmJn.9ISIDVsq83huiivi."
+      - CORS_ALLOW="http://localhost:3000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+     - 8080:8080
+    restart: always
+    volumes:
+      - ./:/app
+    
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    environment:
+      - REACT_APP_LINK="http://localhost:8080"
+    ports:
+     - 3000:3000
+    depends_on:
+      - backend
+    restart: always
