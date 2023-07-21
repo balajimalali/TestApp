@@ -2,8 +2,8 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY package.json ./
-COPY prisma ./prisma/
+COPY /package.json ./
+COPY /prisma ./prisma/
 
 COPY . .
 
