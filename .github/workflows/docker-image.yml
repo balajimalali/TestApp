@@ -18,8 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setting env file
-      run: |
-        echo "${{ secrets.backend }}" > .env
+      run: echo "${{ secrets.BACKEND }}" > .env
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-backend:$(date +%s)
       
