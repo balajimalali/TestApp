@@ -37,6 +37,8 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Setting env file
+      run: echo "${{ secrets.FRONTEND }}" > .env
     - name: Build the Docker image for frontend
       run: docker build ./frontend --file frontend/Dockerfile --tag balajimalali/testapp-frontend:${{ github.sha }}
     - name: Docker push
