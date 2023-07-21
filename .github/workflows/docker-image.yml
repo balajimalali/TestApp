@@ -19,8 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Setting env file
       run: |
-        echo "${{ secrets.env }}" > .env
-        echo "${{ secrets.env.backend }}" > .env
+        echo "${{ secrets.backend }}" > .env
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-backend:$(date +%s)
       
