@@ -1,6 +1,6 @@
 # TestApp
-## [Try the live demo](http://testapp0.eastus.cloudapp.azure.com/alltests "Link") 
- http://testapp0.eastus.cloudapp.azure.com/alltests
+## [Try the live demo](http://testapp0.eastus.cloudapp.azure.com "Link") 
+ http://testapp0.eastus.cloudapp.azure.com
 
 ------------
 
