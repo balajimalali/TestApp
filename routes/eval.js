@@ -26,6 +26,7 @@ const evaluate = (paper, soln) => {
             result.section[index].question[qind].question = question.question;
             // result.section[index].question[qind].option = question.option;
             result.section[index].question[qind].option = paper.section[index].question[qind].option;
+            result.section[index].question[qind].choice = paper.section[index].question[qind].choice;
             result.section[index].question[qind].answer = question.answer;
             // console.log(typeof (paper.section[index]));
             if (paper.section[index].question[qind].choice) {
