@@ -31,7 +31,7 @@ export default function Report() {
 
     const classD = (question, option) => {
         let ans = 'answer'
-        if(option.selected){
+        if(question.choice && option.selected){
             // ans = ans + ' choice'
             if (question.answer !== option.id) {
                 ans = ans + ' wrong'
@@ -63,7 +63,7 @@ export default function Report() {
                                             {
                                                 question.option.map(option => {
                                                     return <div key={option.id}>
-                                                        <p className={classD(question, option)}>{option.selected ?  <span>&#10003; &nbsp;</span> : <span>&nbsp; &nbsp; &nbsp;</span> }{option.value}</p>
+                                                        <p className={classD(question, option)}>{(question.choice && option.selected) ?  <span>&#10003; &nbsp;</span> : <span>&nbsp; &nbsp; &nbsp;</span> }{option.value}</p>
                                                     </div>
                                                 })
                                             }

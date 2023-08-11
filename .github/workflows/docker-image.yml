@@ -23,8 +23,8 @@ jobs:
       run: echo "${{ secrets.BACKEND }}" > .env
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag balajimalali/testapp:${{ github.sha }}
-    - name: Docker push
-      run: docker push balajimalali/testapp:${{ github.sha }}
+    # - name: Docker push
+    #   run: docker push balajimalali/testapp:${{ github.sha }}
       
   build-frontend:
 
@@ -41,5 +41,5 @@ jobs:
       run: echo "${{ secrets.FRONTEND }}" > .env
     - name: Build the Docker image for frontend
       run: docker build ./frontend --file frontend/Dockerfile --tag balajimalali/testapp-frontend:${{ github.sha }}
-    - name: Docker push
-      run: docker push balajimalali/testapp-frontend:${{ github.sha }}
+    # - name: Docker push
+    #   run: docker push balajimalali/testapp-frontend:${{ github.sha }}
